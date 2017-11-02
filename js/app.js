@@ -5,16 +5,10 @@
         $scope.characterName = "";
     });
    
-   
-      
-      /*
-
-       app.controller('appController', ['$scope', function($scope) {
+    app.controller('appController', ['$scope', function($scope) {
           $scope.species = {};
-          $scope.species.selection = 'Human';
+          $scope.species.selection = '';
       }])
-
-      
       app.directive('theRatings', function() {
         
         return {
@@ -48,4 +42,3 @@
           }    
         };
       });
-      */
