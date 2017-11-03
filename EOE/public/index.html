@@ -508,10 +508,6 @@ Other:
 
         <div ng-controller='mainCtrl'>
             <h1> Enter A New Poki</h1>
-            <form id="newPoki" ng-submit="addPoki()">
-                Name: <input type="text" ng-model="Name" value=""><br> Url: <input type="url" ng-model="Url" value=""><br>
-                <input type="submit" value="Submit">
-            </form>
             <div ng-if='!species.length' class='no-species center stretch'>
                 <h1 class='h1'>
                     Set up your endpoint at `/species` to get this view working
@@ -521,10 +517,11 @@ Other:
             <ul ng-if='species.length' class='list center stretch'>
                 <li ng-repeat='s in species' class='species'>
                     <h1>{{ s.speciesName }}</h1>
-                    
+
                 </li>
             </ul>
         </div>
+
 
 
     </div>
