@@ -125,15 +125,23 @@
 
         <div ng-controller="xpController" class="panel panel-danger XP-panel" id="XP-text-box">
             <div class="panel-heading">
-                <span> Start XP: {{StartXP}}</span>
-                <span class="space-me"> Earned XP: {{EarnedXP}}</span>
-                <span class="space-me"> Total XP: {{TotalXP}}</span>
-                <span class="space-me"> Used: {{UsedXP}}</span>
-                <span class="space-me"> Unused XP: {{UnusedXP}}</span>
+                <span  class="first-item" id="StartXP"> Start XP: {{StartXP}}</span>
+                <span id="EarnedXP" class="space-me"> Earned XP: {{EarnedXP}}</span>
+                <span id="TotalXP" class="space-me"> Total XP: {{TotalXP}}</span>
+                <span id="UsedXP" class="space-me"> Used: {{UsedXP}}</span>
+                <span id="UnusedXP" class="space-me "> Unused XP: {{UnusedXP}}</span>
             </div>
         </div>
         <!-- Values and characteristics -->
 
+        <div class="panel-heading chars">
+                <span class="space-me2" id="brawn"> BRAWN: 0</span>
+                <span id="agility" class="space-me2">AGILITY: 0</span>
+                <span id="intellect" class="space-me2">INTELLECT: 0</span>
+                <span id="cunning" class="space-me2">CUNNING: 0</span>
+                <span id="willpower" class="space-me2">WILLPOWER: 0</span>
+                <span id="presence" class="space-me2 last-item">PRESENCE: 0</span>
+            </div>
         <!--REFER TO FLEX-->
         <div id="SWSD-container" class="flex-container">
             <!-- SOAK-->
@@ -141,7 +149,7 @@
                 <div class="panel-heading">
                     <h2 class="panel-title">SOAK VALUE</h2>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body soak">
                     <input class="center-input" id="soak-val" type="text">
                 </div>
             </div>
@@ -507,19 +515,16 @@ Other:
         <!--                      -->
 
         <div ng-controller='mainCtrl'>
-            <h1> Enter A New Poki</h1>
             <div ng-if='!species.length' class='no-species center stretch'>
                 <h1 class='h1'>
                     Set up your endpoint at `/species` to get this view working
                 </h1>
             </div>
 
-            <ul ng-if='species.length' class='list center stretch'>
-                <li ng-repeat='s in species' class='species'>
-                    <h1>{{ s.speciesName }}</h1>
-
-                </li>
-            </ul>
+            <div ng-if='species.length' class='list center stretch'>
+                <div ng-repeat='s in species' class='species'>
+                </div>
+            </div>
         </div>
 
 

@@ -132,11 +132,11 @@ app.controller('formCtrl', function ($scope) {
 
 app.controller('xpController', ['$scope', function ($scope) {
 
-  $scope.StartXP = 1;
-  $scope.EarnedXP = 2;
-  $scope.TotalXP = 3;
-  $scope.UsedXP = 4;
-  $scope.UnusedXP = 5;
+  $scope.StartXP = 0;
+  $scope.EarnedXP = 0;
+  $scope.TotalXP = 0;
+  $scope.UsedXP = 0;
+  $scope.UnusedXP = 0;
 }])
 app.directive('xpDirective', function () {
 
@@ -304,6 +304,24 @@ app.directive('speciesList', function () {
         for (var i = 0; i < allSpecies.length; i++) {
           if (allSpecies[i].speciesName == $scope.species_selection) {
             console.log("We HAVE A WINNER!!!: " + allSpecies[i].speciesName);
+            console.log("startXP:" + allSpecies[i].StartingExperience);
+            $('#StartXP').text('Start XP: ' + allSpecies[i].StartingExperience);
+            $('#soak-val').attr('value', allSpecies[i].brawn);
+           // $('#colorpickerField1').attr('value', '#000000')
+           $('#wounds-threshold').attr('value', allSpecies[i].woundThreshold);
+           $('#strain-threshold').attr('value', allSpecies[i].strainThreshold);
+
+           //General Skills
+           $('#Athletics').attr('value', allSpecies[i].brawn);
+           $('#Athletics').attr('value', allSpecies[i].brawn);
+
+           $('#brawn').text('Brawn: ' + allSpecies[i].brawn);
+           $('#agility').text('Agility: ' + allSpecies[i].agility);
+           $('#intellect').text('Intellect: ' + allSpecies[i].intellect);
+           $('#cunning').text('Cunning: ' + allSpecies[i].cunning);
+           $('#willpower').text('Willpower: ' + allSpecies[i].willpower);
+           $('#presence').text('Presence: ' + allSpecies[i].presence);
+            
           }
         }
       }

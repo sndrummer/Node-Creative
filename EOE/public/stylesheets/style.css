@@ -163,11 +163,34 @@ width: 100%;
 
 .XP-panel{
     width: 100%;
-    margin: 5px;
+    margin: 10px;
 }
 
 .col-centered{
     margin: 0 auto;
     float: none;
+}
+.space-me2{
+    padding-right: 5em;
+    margin-bottom: 5em;
+    font-size: 115%;
+    font-weight: bold;
+    
+}
+
+.first-item{
+    padding-left:3em;
+}
+.last-item{
+    padding-right: 0;
+    margin-bottom: 5em;
+}
+.chars{
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.soak{
+    padding: 2.2em;
 }
 
