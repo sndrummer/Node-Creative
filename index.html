@@ -69,7 +69,7 @@
 
 
     <!--Angular Character Form-->
-    <div id="character-creator" ng-app="app">
+    <div id="character-creator" ng-app="app" class="ng-scope" ng-controller="appController">
         <p>
             <hr class="style2">
         </p>
@@ -82,9 +82,9 @@
                 <input type="text" class="form-control" id="name" ng-model="characterName">
             </div>
 
-            <div class="form-group" class="ng-scope" ng-controller="appController">
+            <div class="form-group">
                 <label for="species">Species:</label>
-                <the-ratings model="species.selection">
+                <species-list>
             </div>
 
 
@@ -97,13 +97,41 @@
                 <input type="text" class="form-control" id="career">
             </div>
             <div class="form-group">
-                <label for="career">Specialization Trees:</label>
+                <label for="career">Specialization Trees: {{specializationTrees}}</label>
                 <input type="text" class="form-control" id="career">
             </div>
         </form>
         <p>
             <hr>
         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div ng-controller="xpController" class="panel panel-danger XP-panel" id="XP-text-box">
+            <div class="panel-heading">
+                <span> Start XP: {{StartXP}}</span>
+                <span class="space-me"> Earned XP: {{EarnedXP}}</span>
+                <span class="space-me"> Total XP: {{TotalXP}}</span>
+                <span class="space-me"> Used: {{UsedXP}}</span>
+                <span class="space-me"> Unused XP: {{UnusedXP}}</span>
+            </div>
+        </div>
         <!-- Values and characteristics -->
 
         <!--REFER TO FLEX-->
@@ -180,19 +208,297 @@
         </div>
 
 
-        <!-- Skills -->
+        <!-- Skills 
+        
+        Astrogation (Int)
+Athletics (Br)
+Charm (Pr)
+Coercion (Will)
+Computers (Int)
+Cool (Pr)
+Coordination (Ag)
+Deception (Cun)
+Discipline (Will)
+Leadership (Pr)
+Mechanics (Int)
+Medicine (Int)
+Negotiation (Pr)
+Perception (Cun)
+Piloting - Planetary (Ag)
+Piloting - Space (Ag)
+Resilience (Br)
+Skulduggery (Cun)
+Stealth (Ag)
+Streetwise (Cun)
+Survival (Cun)
+Vigilance (Will)
+
+
+
+
+
+
+Core Worlds (Int)
+Education (Int)
+Lore (Int)
+Outer Rim (Int)
+Underworld (Int)
+Xenology (Int)
+Other:
+        -->
         <h1 class="center-text">Skills</h1>
         <div id="skills" class="flex-container">
 
-            <div class="panel panel-danger" id="general-skills">
+            <div class="panel panel-info" id="general-skills">
+                <div class="panel-heading">
+                    <h2 class="panel-title">General Skills</h2>
+                </div>
+                <form>
+                  
+
+                        <div class="panel-body">
+
+
+                            <label for="Athletics">Athletics (Br):</label>
+
+                            <div class="form-group">
+
+                                <input type="number" class="form-control"  ng-model="Athletics" id="Athletics">
+
+
+                            </div>
+                            
+
+                            <label for="Charm">Charm (Pr):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Charm">
+                            </div>
+                            
+                            <label for="Coercion">Coercion (Will):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Coercion">
+                            </div>
+                            
+                            <label for="Computers">Computers (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Computers">
+                            </div>
+                            
+                            <label for="Cool">Cool (Pr):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Cool">
+                            </div>
+                            
+                            <label for="Coordination">Coordination (Ag):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Coordination">
+                            </div>
+
+                            <label for="Deception">Deception (Cun):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Deception">
+                            </div>
+
+                            
+
+                            <label for="Discipline">Discipline (Will):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Discipline">
+                            </div>
+                            
+                            <label for="Leadership">Leadership (Pr):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Leadership">
+                            </div>
+                            
+                            <label for="Mechanics">Mechanics (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Mechanics">
+                            </div>
+                            
+                            <label for="Medicine">Medicine (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Medicine">
+                            </div>
+                            
+                            <label for="Negotiation">Negotiation (Pr):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Negotiation">
+                            </div>
+                            
+                            <label for="Perception">Perception (Cun):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Perception">
+                            </div>
+                            
+                            <label for="PilotingP">Piloting - Planetary (Ag):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="PilotingP">
+                            </div>
+                            
+                            <label for="PilotingS">Piloting - Space (Ag):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="PilotingS">
+                            </div>
+                            
+                            <label for="Resilience">Resilience (Br):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Resilience">
+                            </div>
+                            
+                            <label for="Skulduggery">Skulduggery (Cun):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Skulduggery">
+                            </div>
+                            
+                            <label for="Stealth">Stealth (Ag):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Stealth">
+                            </div>
+                            
+
+                            <label for="Streetwise">Streetwise (Cun):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Streetwise">
+                            </div>
+                            
+
+
+
+                            <label for="Survival">Survival (Cun):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Survival">
+                            </div>
+                            
+
+
+
+                            <label for="Vigilance">Vigilance (Will):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Vigilance">
+                            </div>
+                            
+
+                        </div>
+                    
+                </form>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div id="combat-knowledge-container">
+
+
+                <div class="panel panel-info" id="combat-skills">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Combat Skills</h2>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <label for="Brawl">Brawl (Br):</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="Brawl">
+                        </div>
+                        
+
+
+
+                        <label for="Gunnery">Gunnery (Ag):</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="Gunnery">
+                        </div>
+                        
+
+
+
+                        <label for="Melee">Melee (Br):</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="Melee">
+                        </div>
+                       
+
+
+
+                        <label for="RangedL">Ranged - Light (Ag):</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="RangedL">
+                        </div>
+                        
+
+                        <label for="RangedH">Ranged - Heavy (Ag):</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="RangedH">
+                        </div>
+                        
+
+
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="panel panel-info" id="knowledge-skills">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Knowledge Skills</h2>
+                    </div>
+                    <div class="panel-body">
+
+                            <label for="Core-Worlds">Core Worlds (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Core-Worlds">
+                            </div>
+                            
+    
+    
+    
+                            <label for="Education">Education (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Education">
+                            </div>
+                            
+    
+    
+    
+                            <label for="Lore">Lore (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Lore">
+                            </div>
+                            
+    
+                            <label for="Outer-Rim">Outer Rim (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Outer-Rim">
+                            </div>
+                            
+    
+                            <label for="Underworld">Underworld (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Underworld">
+                            </div>
+                            
+                            <label for="Xenology">Xenology (Int):</label>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="Xenology">
+                            </div>
+                            
+    
+
+
+
+                    </div>
+                </div>
 
             </div>
-            <div class="panel panel-danger" id="combat-skills">
 
-            </div>
-            <div id="knowledge-skills">
-
-            </div>
         </div>
     </div>
 
@@ -215,9 +521,11 @@
                     <label for="species">Species:</label>
                     <select class="form-control" id="species">
                     <option>Aqualish</option>
+
                     <option>Bothan</option>
                     <option>Chevin</option>
                     <option>Chiss</option>
+
                     <option>Clawdit</option>
                     <option>Devaronian</option>
                     <option>Drall</option>
@@ -228,6 +536,8 @@
                             <option value="human">Human</option>
                             <option value="corellian">Corellian</option>
                           </optgroup>
+
+
                     <option>Kalleran</option>
                     <option>Klatooinian</option>
                     <option>Rodian</option>

@@ -40,12 +40,15 @@ hr.style2{
 
 .flex-container{
     display: flex;
+
 }
 
 .panel-danger{
     width: 50%;
     margin: 5px;
 }
+
+
 
 .flex{
     flex-grow: 1;
@@ -124,13 +127,47 @@ hr.style2{
 
 /**********************************************************************************************************/
 /*PART 2 */
-#skills{
 
+#skills{
+    width: 100%;
+}
+#combat-knowledge-container{
+width: 100%;
 }
 
 #general-skills{
-    border-style: solid;
-    border-width: 5px;
-    width: 50%;
+    width: 100%;
+    margin: 15px;
+    margin-top: 0px;
+}
+#combat-skills{
+    width: 100%;
+    
+}
+
+#XP-text-box{
+    margin-bottom: 25px;
+}
+
+.XP-Item{
+    padding: 25px;
+    float:left;
+    font-size: 125%;
+    text-decoration-color: white;
+    font-weight: bold;
+}
+
+.space-me{
+    padding-left: 15%;
+}
+
+.XP-panel{
+    width: 100%;
+    margin: 5px;
+}
+
+.col-centered{
+    margin: 0 auto;
+    float: none;
 }
 
